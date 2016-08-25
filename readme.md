@@ -1,9 +1,22 @@
-# Model Well Math
+# MODFLOW Well Math
+
 
 ### Introduction
+MODFLOW Well Math is a program that performs linear calcullation bwtween two wells in designated zones and generate the new well file. The pumping rates in the new well file is:
+```
+WELL_New = WELL1 * Multiplier1 + WELL2 * Multiplier2
+``` 
+Below are some examples of the Multipliers:
+
+`Multiplier1 = 1.0; Multiplier2 = -1.0; Well1 = Well2` This will turn off the pumping in a particular zone. 
+
+`Multiplier1 = 1.2; Multiplier2 = 0.0                ` This will increase the pumping by 20% in a particular zone. 
+
+`Multiplier1 = 1.2; Multiplier2 = 1.0                ` This will add the pumping of WELL2 in a particular zone. 
+
 
 ### Usage
-
+The program is controled by a *config* file.
 ```
 mod_wel_math.exe config_file
 ```
